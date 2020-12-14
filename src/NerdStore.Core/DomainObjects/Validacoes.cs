@@ -149,9 +149,50 @@ namespace NerdStore.Core.DomainObjects
             }
         }
 
+        public static void ValidarSeMenorQue(long valor, long minimo, string mensagem)
+        {
+            if (valor <= minimo)
+            {
+                throw new DomainException(mensagem);
+            }
+        }
+
+        public static void ValidarSeMenorQue(double valor, double minimo, string mensagem)
+        {
+            if (valor <= minimo)
+            {
+                throw new DomainException(mensagem);
+            }
+        }
+
+        public static void ValidarSeMenorQue(float valor, float minimo, string mensagem)
+        {
+            if (valor <= minimo)
+            {
+                throw new DomainException(mensagem);
+            }
+        }
+
+        public static void ValidarSeMenorQue(int valor, int minimo, string mensagem)
+        {
+            if (valor <= minimo)
+            {
+                throw new DomainException(mensagem);
+            }
+        }
+
+        public static void ValidarSeMenorQue(decimal valor, decimal minimo, string mensagem)
+        {
+            if (valor <= minimo)
+            {
+                throw new DomainException(mensagem);
+            }
+        }
+
+
         public static void ValidarSeFalso(bool boolvalor, string mensagem)
         {
-            if (boolvalor)
+            if (!boolvalor)
             {
                 throw new DomainException(mensagem);
             }
