@@ -12,7 +12,7 @@ namespace NerdStore.Catalogo.Domain.Tests
             // Arrange & Act & Assert
             var ex = Assert.Throws<DomainException>(() =>
            {
-               new Produto(string.Empty, "Descrição", false, 100, Guid.NewGuid(), DateTime.Now, "Imagem", 1, new Dimensoes(2, 2, 2));
+               new Produto(string.Empty, "Descrição", false, 100, Guid.NewGuid(), DateTime.Now, "Imagem", new Dimensoes(2, 2, 2));
            });
 
             Assert.Equal("O campo Nome do produto não pode estar vazio", ex.Message);
@@ -20,7 +20,7 @@ namespace NerdStore.Catalogo.Domain.Tests
 
             ex = Assert.Throws<DomainException>(() =>
             {
-                new Produto("Nome", string.Empty, false, 100, Guid.NewGuid(), DateTime.Now, "Imagem", 1, new Dimensoes(2, 2, 2));
+                new Produto("Nome", string.Empty, false, 100, Guid.NewGuid(), DateTime.Now, "Imagem", new Dimensoes(2, 2, 2));
             });
 
             Assert.Equal("O campo Descrição do produto não pode estar vazio", ex.Message);
@@ -28,7 +28,7 @@ namespace NerdStore.Catalogo.Domain.Tests
 
             ex = Assert.Throws<DomainException>(() =>
             {
-                new Produto("Nome", "Descrição", false, 0, Guid.NewGuid(), DateTime.Now, "Imagem", 1, new Dimensoes(2, 2, 2));
+                new Produto("Nome", "Descrição", false, 0, Guid.NewGuid(), DateTime.Now, "Imagem",  new Dimensoes(2, 2, 2));
             });
 
 
@@ -37,7 +37,7 @@ namespace NerdStore.Catalogo.Domain.Tests
 
             ex = Assert.Throws<DomainException>(() =>
             {
-                new Produto("Nome", "Descrição", false, 100, Guid.Empty, DateTime.Now, "Imagem", 1, new Dimensoes(2, 2, 2));
+                new Produto("Nome", "Descrição", false, 100, Guid.Empty, DateTime.Now, "Imagem", new Dimensoes(2, 2, 2));
             });
 
 
@@ -45,7 +45,7 @@ namespace NerdStore.Catalogo.Domain.Tests
 
             ex = Assert.Throws<DomainException>(() =>
             {
-                new Produto("Nome", "Descrição", false, 100, Guid.NewGuid(), DateTime.Now, "", 1, new Dimensoes(2, 2, 2));
+                new Produto("Nome", "Descrição", false, 100, Guid.NewGuid(), DateTime.Now, "", new Dimensoes(2, 2, 2));
             });
 
 
@@ -54,7 +54,7 @@ namespace NerdStore.Catalogo.Domain.Tests
 
             ex = Assert.Throws<DomainException>(() =>
             {
-                new Produto("Nome", "Descrição", false, 100, Guid.NewGuid(), DateTime.Now, "Imagem", 1, new Dimensoes(0, 1, 1));
+                new Produto("Nome", "Descrição", false, 100, Guid.NewGuid(), DateTime.Now, "Imagem",  new Dimensoes(0, 1, 1));
             });
 
 
