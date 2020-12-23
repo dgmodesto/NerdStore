@@ -1,11 +1,10 @@
-﻿using NerdStore.Core.DomainObjects;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System;
+using NerdStore.Core.DomainObjects;
+using NerdStore.Core.Messages.CommonMessages.DomainEvents;
 
 namespace NerdStore.Catalogo.Domain.Events
 {
-    public class ProdutoAbaixoEstoqueEvent : DomainEvents
+    public class ProdutoAbaixoEstoqueEvent : DomainEvent
     {
         public int QuantidadeRestante { get; private set; }
 
